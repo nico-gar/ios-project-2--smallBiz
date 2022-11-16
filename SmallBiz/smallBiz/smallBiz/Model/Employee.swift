@@ -19,7 +19,10 @@ class Employee: Codable {
         self.id = id
     }
     
-    // Equatable Conformance
+    // Equatable
+    
+}
+extension Employee: Equatable {
     static func == (lhs: Employee, rhs: Employee) -> Bool {
         return lhs.id == rhs.id
     }

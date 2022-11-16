@@ -51,6 +51,15 @@ class EmployeeController{
             print("Error decoding our data into songs: \(error) -- \(error.localizedDescription)")
         }
     }
+//    Delete
     
+    func delete(employee: Employee) {
+        guard let index = employees.firstIndex(of: employee) else {return}
+        
+        employees.remove(at: index)
+        print("removed \(employee.firstName)")
+        
+        saveToPersistenceStore()
+    }
     
 }

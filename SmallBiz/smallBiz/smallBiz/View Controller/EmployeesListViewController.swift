@@ -73,6 +73,7 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let employeeToDelete = EmployeeController.shared.employees[indexPath.row]
+            
             EmployeeController.shared.delete(employee: employeeToDelete)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
