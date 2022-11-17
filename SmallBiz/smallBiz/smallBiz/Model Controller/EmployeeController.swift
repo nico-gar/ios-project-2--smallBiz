@@ -12,7 +12,7 @@ class EmployeeController{
 //    Shared Instance
     static let shared = EmployeeController()
     
-//    Source of Truth
+//    Source of Truth (database, you can read and write to)
     var employees: [Employee] = []
 //    CRUD
     

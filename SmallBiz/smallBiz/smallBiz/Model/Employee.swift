@@ -8,20 +8,21 @@
 import Foundation
 
 class Employee: Codable {
-    let firstName: String
-    let lastName: String
-    let skillLevel: Int
+    var firstName: String
+    var lastName: String
+    var tasks: [Task]
+    var skillLevel: Int
     let id: String
-    init(firstName: String, lastName: String, skillLevel: Int = 0, id: String = UUID().uuidString) {
+    init(firstName: String, lastName: String, tasks: [Task] = [], skillLevel: Int = 0, id: String = UUID().uuidString) {
         self.firstName = firstName
         self.lastName = lastName
+        self.tasks = tasks
         self.skillLevel = skillLevel
         self.id = id
     }
-    
-    // Equatable
-    
 }
+
+// Equatable
 extension Employee: Equatable {
     static func == (lhs: Employee, rhs: Employee) -> Bool {
         return lhs.id == rhs.id
