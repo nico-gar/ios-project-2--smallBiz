@@ -112,7 +112,6 @@
 			children = (
 				1CAA3EEF2923E06C0003C0A4 /* EmployeeController.swift */,
 				1CAA3EFE292576850003C0A4 /* TaskController.swift */,
-				1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -121,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1CAA3EF42924079A0003C0A4 /* EmployeesListViewController.swift */,
+				1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";

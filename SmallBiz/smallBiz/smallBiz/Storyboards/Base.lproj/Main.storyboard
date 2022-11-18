@@ -78,6 +78,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kyz-s0-0S2" kind="show" identifier="toEmployeeTask" id="ZjC-7S-RpJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -98,7 +101,6 @@
                     <connections>
                         <outlet property="tableView" destination="Zko-Td-Mdt" id="n7d-pq-Mp1"/>
                         <outlet property="textField" destination="NlK-Bp-bgJ" id="2CR-g6-QgX"/>
-                        <segue destination="kyz-s0-0S2" kind="show" id="0pt-rk-927"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ico-W7-nhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

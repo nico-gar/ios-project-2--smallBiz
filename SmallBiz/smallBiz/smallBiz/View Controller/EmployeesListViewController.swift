@@ -25,6 +25,7 @@ class EmployeesListViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        EmployeeController.shared.saveToPersistenceStore()
     }
     
     
@@ -70,6 +71,11 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.tableView.deselectRow(at: indexPath, animated: false)
+        }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let employeeToDelete = EmployeeController.shared.employees[indexPath.row]
@@ -78,6 +84,21 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toEmployeeTask" {
+            // assigning destination to the segue.destination to the screen that I want to go
+            guard let destination = segue.destination as? EmployeeTaskListViewController,
+                  // indexPath is the cell (row) that was tapped on
+                  let indexPath = tableView.indexPathForSelectedRow
+                    //bail the function if there is an issue with the destination or indexPath
+                    else { return }
+            // assigning employtoshow to the array of employees
+            let employeeToShow = EmployeeController.shared.employees[indexPath.row]
+            // this line of code acesses employeeLandingPad variable, which is an employee object and I am setting the value of the varable to be the employee object that was tapped on the tableview
+            // creating a window into the employee information
+            destination.employeeLandingPad = employeeToShow
+        }
+    }
 }
