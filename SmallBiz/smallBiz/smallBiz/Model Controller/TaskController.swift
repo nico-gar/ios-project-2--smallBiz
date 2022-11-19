@@ -17,6 +17,18 @@ class TaskController {
         
         EmployeeController.shared.saveToPersistenceStore()
     }
+    
+    static func toggleTaskStatus(employee: Employee, task: Task){
+        guard let taskIndex = employee.tasks.firstIndex(of: task),
+              let employeeIndex = EmployeeController.shared.employees.firstIndex(of: employee)
+        else {
+            return
+        }
+        
+        EmployeeController.shared.employees[employeeIndex].tasks[taskIndex].isComplete.toggle()
+        
+        EmployeeController.shared.saveToPersistenceStore()
+    }
 
     static func deleteTaskFrom(_ employee: Employee, _ task: Task) {
             // Locate the index of the task we are attempting to remove

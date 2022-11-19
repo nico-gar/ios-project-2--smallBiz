@@ -10,22 +10,23 @@ import UIKit
 class EmployeeTaskListViewController: UIViewController {
     // similar to source of truth, it grabs on employee from the array of employees of tasks from the task model to reference in EmployeeTaskListView Controller
     var employeeLandingPad: Employee?
-    var toaster = "toaster"
     @IBOutlet var addANewTaskList: UITextField!
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
     }
-    
+
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
+        
     @IBAction func addButtonTapped(_ sender: Any) {
-        guard let text = addANewTaskList.text, !text.isEmpty else { return }
+        guard let text = addANewTaskList.text,
+                !text.isEmpty
+        else { return }
         
         // This calls our function made in the task controller to append the task and it passes in the employeeLandingPad
         TaskController.assignTaskTo(employeeLandingPad!, taskTitle: text)
@@ -55,22 +56,20 @@ extension EmployeeTaskListViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // I am assigning "cell" to the location where the task will be placed (tableViewCell)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
-        // "content" is being assigned to cell, whatever is written in the tableViewCell will be assigned the variable content.
-        var content = cell.defaultContentConfiguration()
-        // task is being assigned to the array tasks that is located in the Task model.. if its there, hence the ?
-        let task = employeeLandingPad?.tasks[indexPath.row]
-        //content.text is assigned to what was placed in the field. it reads as grab task, if its there, then grab the title of the task. if it isn't there mark with a "-"
-        content.text = task?.title ?? "-"
-        
-        cell.contentConfiguration = content
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell
+        else {
+            return UITableViewCell()
+        }
+        let task = employeeLandingPad!.tasks[indexPath.row]
+        cell.task = task
+        cell.delegate = self
         return cell
     }
-    
-    
+}
 
-    
-
-    
+extension EmployeeTaskListViewController: TaskStatusChangedProtocol {
+    func updateTaskStatus(task: Task) {
+        TaskController.toggleTaskStatus(employee: employeeLandingPad, task: task)
+        tableView.reloadData()
+    }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1C9F61ED2925CAEC007C7A37 /* EmployeeTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */; };
+		1C9F6236292943C8007C7A37 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */; };
+		1C9F6238292965B2007C7A37 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */; };
+		1C9F623A2929666A007C7A37 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F62392929666A007C7A37 /* SettingsTableViewCell.swift */; };
 		1CAA3ED62923CB5A0003C0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA3ED52923CB5A0003C0A4 /* AppDelegate.swift */; };
 		1CAA3ED82923CB5A0003C0A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA3ED72923CB5A0003C0A4 /* SceneDelegate.swift */; };
 		1CAA3EDD2923CB5A0003C0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAA3EDB2923CB5A0003C0A4 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTaskListViewController.swift; sourceTree = "<group>"; };
+		1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1C9F62392929666A007C7A37 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		1CAA3ED22923CB5A0003C0A4 /* smallBiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallBiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CAA3ED52923CB5A0003C0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CAA3ED72923CB5A0003C0A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9F6234292943A8007C7A37 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */,
+				1C9F62392929666A007C7A37 /* SettingsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1CAA3EC92923CB5A0003C0A4 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +83,7 @@
 		1CAA3ED42923CB5A0003C0A4 /* smallBiz */ = {
 			isa = PBXGroup;
 			children = (
+				1C9F6234292943A8007C7A37 /* Cells */,
 				1CAA3EF12924029F0003C0A4 /* View Controller */,
 				1CAA3EEE2923E0120003C0A4 /* Model Controller */,
 				1CAA3EEA2923CE810003C0A4 /* Resources */,
@@ -121,6 +137,7 @@
 			children = (
 				1CAA3EF42924079A0003C0A4 /* EmployeesListViewController.swift */,
 				1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */,
+				1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -199,9 +216,12 @@
 			files = (
 				1CAA3EFF292576850003C0A4 /* TaskController.swift in Sources */,
 				1CAA3ED62923CB5A0003C0A4 /* AppDelegate.swift in Sources */,
+				1C9F6236292943C8007C7A37 /* TaskTableViewCell.swift in Sources */,
 				1CAA3EEC2923DE360003C0A4 /* Employee.swift in Sources */,
 				1CAA3ED82923CB5A0003C0A4 /* SceneDelegate.swift in Sources */,
 				1CAA3EF02923E06C0003C0A4 /* EmployeeController.swift in Sources */,
+				1C9F623A2929666A007C7A37 /* SettingsTableViewCell.swift in Sources */,
+				1C9F6238292965B2007C7A37 /* SettingsTableViewController.swift in Sources */,
 				1C9F61ED2925CAEC007C7A37 /* EmployeeTaskListViewController.swift in Sources */,
 				1CAA3EFD292573A80003C0A4 /* Task.swift in Sources */,
 				1CAA3EF52924079A0003C0A4 /* EmployeesListViewController.swift in Sources */,

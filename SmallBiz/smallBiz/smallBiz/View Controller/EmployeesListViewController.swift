@@ -8,27 +8,27 @@
 import UIKit
 
 class EmployeesListViewController: UIViewController {
-// Outlets
+    // Outlets
     
     @IBOutlet var textField: UITextField!
     @IBOutlet var tableView: UITableView!
     
-// Outlets
+    // Outlets
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        EmployeeController.shared.loadFromPersistenceStore()
     }
     
     func setupTableView() {
-        
         tableView.delegate = self
         tableView.dataSource = self
-        EmployeeController.shared.saveToPersistenceStore()
     }
-    
-    
     
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let fullName = textField.text,
@@ -36,9 +36,9 @@ class EmployeesListViewController: UIViewController {
         
         let separatedName = fullName.components(separatedBy: " ")
         guard let firstName = separatedName.first,
-                let lastName = separatedName.last
+              let lastName = separatedName.last
         else { return }
-
+        
         EmployeeController.shared.addEmployee(firstName: firstName, lastName: lastName)
         textField.text = ""
         tableView.reloadData()
@@ -46,7 +46,7 @@ class EmployeesListViewController: UIViewController {
     
     
     // MARK: - Table view data source
-
+    
 }
 
 extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,6 +75,7 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             self.tableView.deselectRow(at: indexPath, animated: false)
         }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -93,7 +94,7 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
                   // indexPath is the cell (row) that was tapped on
                   let indexPath = tableView.indexPathForSelectedRow
                     //bail the function if there is an issue with the destination or indexPath
-                    else { return }
+            else { return }
             // assigning employtoshow to the array of employees
             let employeeToShow = EmployeeController.shared.employees[indexPath.row]
             // this line of code acesses employeeLandingPad variable, which is an employee object and I am setting the value of the varable to be the employee object that was tapped on the tableview
@@ -102,3 +103,4 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
 }
+

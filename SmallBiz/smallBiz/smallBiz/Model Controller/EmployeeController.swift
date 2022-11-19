@@ -20,6 +20,7 @@ class EmployeeController{
     func addEmployee(firstName: String, lastName:String){
         let newEmployee = Employee(firstName: firstName, lastName: lastName)
         employees.append(newEmployee)
+        saveToPersistenceStore()
     }
     
 //    Delete
@@ -43,6 +44,8 @@ class EmployeeController{
     }
 
 //    Load
+    
+    //find where to use this function and call it
     func loadFromPersistenceStore() {
         do {
             let data = try Data(contentsOf: createPersistenceStore())
