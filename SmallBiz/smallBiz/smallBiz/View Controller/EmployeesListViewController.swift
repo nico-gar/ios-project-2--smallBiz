@@ -8,12 +8,12 @@
 import UIKit
 
 class EmployeesListViewController: UIViewController {
-    // Outlets
+    // MARK - Outlets
     
     @IBOutlet var textField: UITextField!
     @IBOutlet var tableView: UITableView!
     
-    // Outlets
+    // MARK - End of Outlets
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,12 @@ class EmployeesListViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    // MARK - Action Outlets
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let fullName = textField.text,
-              !fullName.isEmpty else { return }
+              !fullName.isEmpty
+        else { return }
         
         let separatedName = fullName.components(separatedBy: " ")
         guard let firstName = separatedName.first,
@@ -44,6 +47,7 @@ class EmployeesListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    // MARK - End of Action Outlets
     
     // MARK: - Table view data source
     
@@ -86,6 +90,7 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toEmployeeTask" {
@@ -97,9 +102,9 @@ extension EmployeesListViewController: UITableViewDelegate, UITableViewDataSourc
             else { return }
             // assigning employtoshow to the array of employees
             let employeeToShow = EmployeeController.shared.employees[indexPath.row]
-            // this line of code acesses employeeLandingPad variable, which is an employee object and I am setting the value of the varable to be the employee object that was tapped on the tableview
+            // this line of code acesses employee variable, which is an employee object and I am setting the value of the varable to be the employee object that was tapped on the tableview
             // creating a window into the employee information
-            destination.employeeLandingPad = employeeToShow
+            destination.employee = employeeToShow
         }
     }
 }

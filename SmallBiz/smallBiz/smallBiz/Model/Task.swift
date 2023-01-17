@@ -9,7 +9,7 @@ import Foundation
 
 class Task: Codable {
     let title: String
-    let isComplete: Bool
+    var isComplete: Bool
     let id: String
     
     init(title: String, isComplete: Bool = false, id: String = UUID().uuidString){

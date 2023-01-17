@@ -23,9 +23,6 @@ class EmployeeController{
         saveToPersistenceStore()
     }
     
-//    Delete
-    
-    
 //    MARK: - Persistence
     func createPersistenceStore() -> URL {
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
