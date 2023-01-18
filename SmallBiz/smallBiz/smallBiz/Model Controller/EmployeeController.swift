@@ -14,11 +14,25 @@ class EmployeeController{
     
 //    Source of Truth (database, you can read and write to)
     var employees: [Employee] = []
+    
+    var defaultItems: [String] = [
+        "Payroll",
+        "Onboarding",
+        "Employee Profile",
+        "Work shoes",
+    ]
+    
 //    CRUD
     
 //    Create
     func addEmployee(firstName: String, lastName:String){
         let newEmployee = Employee(firstName: firstName, lastName: lastName)
+        
+        if UserDefaults.standard.bool(forKey: "New Employee default items") {
+            let tasks: [Task] = defaultItems.compactMap ( { Task(title: $0) })
+            newEmployee.tasks = tasks
+        }
+        
         employees.append(newEmployee)
         saveToPersistenceStore()
     }

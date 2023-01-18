@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C182697297876A300A957E5 /* DisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C182696297876A300A957E5 /* DisclosureTableViewCell.swift */; };
+		1C18269929787AAC00A957E5 /* DefaultTaskItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C18269829787AAC00A957E5 /* DefaultTaskItems.storyboard */; };
 		1C9F61ED2925CAEC007C7A37 /* EmployeeTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */; };
 		1C9F6236292943C8007C7A37 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */; };
 		1C9F6238292965B2007C7A37 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */; };
@@ -22,9 +24,13 @@
 		1CAA3EFD292573A80003C0A4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA3EFC292573A80003C0A4 /* Task.swift */; };
 		1CAA3EFF292576850003C0A4 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA3EFE292576850003C0A4 /* TaskController.swift */; };
 		1CAA3F012925ACFE0003C0A4 /* EmployeeTaskList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAA3F002925ACFE0003C0A4 /* EmployeeTaskList.storyboard */; };
+		1CC6DAB029787CB400053050 /* DefaultItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6DAAF29787CB400053050 /* DefaultItemsViewController.swift */; };
+		1CC6DAB229787E6200053050 /* DefaultItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC6DAB129787E6200053050 /* DefaultItemsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C182696297876A300A957E5 /* DisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureTableViewCell.swift; sourceTree = "<group>"; };
+		1C18269829787AAC00A957E5 /* DefaultTaskItems.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultTaskItems.storyboard; sourceTree = "<group>"; };
 		1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTaskListViewController.swift; sourceTree = "<group>"; };
 		1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +48,8 @@
 		1CAA3EFC292573A80003C0A4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1CAA3EFE292576850003C0A4 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		1CAA3F002925ACFE0003C0A4 /* EmployeeTaskList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeTaskList.storyboard; sourceTree = "<group>"; };
+		1CC6DAAF29787CB400053050 /* DefaultItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultItemsViewController.swift; sourceTree = "<group>"; };
+		1CC6DAB129787E6200053050 /* DefaultItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 			children = (
 				1C9F6235292943C8007C7A37 /* TaskTableViewCell.swift */,
 				1C9F62392929666A007C7A37 /* SettingsTableViewCell.swift */,
+				1C182696297876A300A957E5 /* DisclosureTableViewCell.swift */,
+				1CC6DAB129787E6200053050 /* DefaultItemsCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 				1CAA3EDB2923CB5A0003C0A4 /* Main.storyboard */,
 				1CAA3F002925ACFE0003C0A4 /* EmployeeTaskList.storyboard */,
 				1CAA3EE02923CB5B0003C0A4 /* LaunchScreen.storyboard */,
+				1C18269829787AAC00A957E5 /* DefaultTaskItems.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 				1CAA3EF42924079A0003C0A4 /* EmployeesListViewController.swift */,
 				1C9F61EC2925CAEC007C7A37 /* EmployeeTaskListViewController.swift */,
 				1C9F6237292965B2007C7A37 /* SettingsTableViewController.swift */,
+				1CC6DAAF29787CB400053050 /* DefaultItemsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -200,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C18269929787AAC00A957E5 /* DefaultTaskItems.storyboard in Resources */,
 				1CAA3EE22923CB5B0003C0A4 /* LaunchScreen.storyboard in Resources */,
 				1CAA3F012925ACFE0003C0A4 /* EmployeeTaskList.storyboard in Resources */,
 				1CAA3EDF2923CB5B0003C0A4 /* Assets.xcassets in Resources */,
@@ -214,6 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC6DAB029787CB400053050 /* DefaultItemsViewController.swift in Sources */,
+				1C182697297876A300A957E5 /* DisclosureTableViewCell.swift in Sources */,
 				1CAA3EFF292576850003C0A4 /* TaskController.swift in Sources */,
 				1CAA3ED62923CB5A0003C0A4 /* AppDelegate.swift in Sources */,
 				1C9F6236292943C8007C7A37 /* TaskTableViewCell.swift in Sources */,
@@ -223,6 +238,7 @@
 				1C9F623A2929666A007C7A37 /* SettingsTableViewCell.swift in Sources */,
 				1C9F6238292965B2007C7A37 /* SettingsTableViewController.swift in Sources */,
 				1C9F61ED2925CAEC007C7A37 /* EmployeeTaskListViewController.swift in Sources */,
+				1CC6DAB229787E6200053050 /* DefaultItemsCollectionViewCell.swift in Sources */,
 				1CAA3EFD292573A80003C0A4 /* Task.swift in Sources */,
 				1CAA3EF52924079A0003C0A4 /* EmployeesListViewController.swift in Sources */,
 			);

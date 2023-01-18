@@ -90,7 +90,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ico-W7-nhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="3Xe-UK-hgk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1107.6335877862596" y="-506.33802816901414"/>
+            <point key="canvasLocation" x="1196" y="-506"/>
         </scene>
         <!--EmployeeTaskList-->
         <scene sceneID="HAX-Ew-i39">
@@ -100,7 +100,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="754-mN-lXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-536"/>
+            <point key="canvasLocation" x="1907" y="-540"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XGf-E0-D8Y">
@@ -126,13 +126,17 @@
         <scene sceneID="OsP-W8-q7S">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2jS-Kb-QTn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="pkg-Se-3My"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="gear" catalog="system" id="pkg-Se-3My"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="aGK-x7-8Fe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bDw-1Y-6sM">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ygV-AN-fjL" kind="relationship" relationship="rootViewController" id="wOQ-uH-SDO"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64O-ym-gzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,13 +164,13 @@
         <!--Settings-->
         <scene sceneID="Yec-bJ-uIJ">
             <objects>
-                <tableViewController id="ygV-AN-fjL" customClass="SettingsTableViewController" customModule="SmallBiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ygV-AN-fjL" customClass="SettingsTableViewController" customModule="smallBiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="V7Q-bM-65u">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="80" id="V50-69-fA5" customClass="SettingsTableViewCell" customModule="SmallBiz" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="80" id="V50-69-fA5" customClass="SettingsTableViewCell" customModule="smallBiz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V50-69-fA5" id="s48-Lg-uha">
@@ -202,7 +206,7 @@
                                     <outlet property="settingsSwitch" destination="0Qm-n6-Zah" id="NKg-0l-DHC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="disclosureCell" rowHeight="80" id="ry2-Ym-DpT" customClass="DisclosureTableViewCell" customModule="SmallBiz" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="disclosureCell" rowHeight="80" id="ry2-Ym-DpT" customClass="DisclosureTableViewCell" customModule="smallBiz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="130" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ry2-Ym-DpT" id="NR5-ja-6cl">
@@ -228,7 +232,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="disclosureCellLabel" destination="w6T-Dm-yru" id="oru-3A-4Sd"/>
+                                    <outlet property="disclosureCellLabel" destination="w6T-Dm-yru" id="GJ3-bz-kly"/>
+                                    <segue destination="IHh-ar-kJT" kind="show" id="vYO-Uf-vGl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -237,10 +242,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ace-ra-0jf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="137"/>
+            <point key="canvasLocation" x="1195" y="137"/>
+        </scene>
+        <!--DefaultTaskItems-->
+        <scene sceneID="9oM-gD-4gy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DefaultTaskItems" id="IHh-ar-kJT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wLg-K6-4aG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LJ-3Y-DJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="96"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
