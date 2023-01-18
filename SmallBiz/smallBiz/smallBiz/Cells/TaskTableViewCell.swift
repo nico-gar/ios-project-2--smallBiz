@@ -24,7 +24,7 @@ class TaskTableViewCell: UITableViewCell {
     
     
     weak var delegate: TaskStatusChangedProtocol?
-    var task: Task! {
+    var task: Task? {
         didSet {
             updateViews()
         }
@@ -42,11 +42,15 @@ class TaskTableViewCell: UITableViewCell {
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {
-        delegate?.updateTaskStatus(task: task)
+        if let task = task {
+            delegate?.updateTaskStatus(task: task)
+        }
     }
     
     func updateViews() {
-        taskTitleLabel.text = task.title
-        taskButton.setImage(task.isComplete ? CellImages.complete : CellImages.incomplete, for: .normal)
+        if let task = task {
+            taskTitleLabel.text = task.title
+            taskButton.setImage(task.isComplete ? CellImages.complete : CellImages.incomplete, for: .normal)
+        }
     }
 }

@@ -26,6 +26,11 @@ class EmployeeTaskListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    func setupViewTitle() {
+        self.navigationItem.title = "\(employee!.firstName)'s Tasks"
+    }
+    
     // MARK - Action Outlets Start
     @IBAction func addButtonTapped(_ sender: Any) {
         guard let text = addANewTaskList.text,
@@ -64,10 +69,15 @@ extension EmployeeTaskListViewController: UITableViewDelegate, UITableViewDataSo
         else {
             return UITableViewCell()
         }
-        let task = employee!.tasks[indexPath.row]
+        let task = employee?.tasks[indexPath.row]
         cell.task = task
         cell.delegate = self
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25){
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }
 
